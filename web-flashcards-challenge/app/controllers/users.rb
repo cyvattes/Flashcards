@@ -4,15 +4,18 @@ end
 
 get '/users/new' do
 
+  erb :'users/new'
 end
 
 post '/users' do
-
+  user = User.create(params[:user])
+  session[:id] = user.id
+  redirect '/decks'
 end
 
-get '/users/:id' do
+# get '/users/:id' do
 
-end
+# end
 
 get '/users/:id/rounds' do
 
