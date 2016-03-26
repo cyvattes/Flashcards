@@ -1,6 +1,7 @@
 get '/decks' do
   # @decks = Deck.all
-  erb :'/decks/index'
+  "placeholder text"
+  # erb :'/decks/index'
 end
 
 # get '/decks/new' do
