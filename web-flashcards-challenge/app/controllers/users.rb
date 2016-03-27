@@ -7,7 +7,7 @@ get '/users/new' do
 end
 
 post '/users' do
-  user = User.new(user_name: params[:user_name], password: params[:password])
+  user = User.new(params[:user])
   if user.save
     session[:id] = user.id
     redirect '/decks'
@@ -22,7 +22,8 @@ end
 
 post '/users/login' do
   user = User.find_by(user_name: params[:username])
-  if user.user_name && user.password == params[:password]
+  if user.authenticate(params[:password])
+    session[:id] = user.id
     redirect "/users/#{user.id}/rounds"
   else
     redirect "/users/login_form"
@@ -31,7 +32,7 @@ end
 
 
 get '/users/:id/rounds' do
-  "it works"
+  "this is the session #{session[:id]}"
 end
 
 get '/users/:id/rounds' do
