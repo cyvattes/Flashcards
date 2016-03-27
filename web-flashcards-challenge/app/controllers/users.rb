@@ -22,10 +22,6 @@ end
 
 post '/users/login' do
   user = User.find_by(user_name: params[:username])
-  p "***************"
-  p params
-  p user
-  p "***************"
   if user.user_name && user.password == params[:password]
     redirect "/users/#{user.id}/rounds"
   else
