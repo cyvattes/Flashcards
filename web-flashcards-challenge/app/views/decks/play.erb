@@ -1,0 +1,11 @@
+<h2><%=@deck.name%></h2>
+
+<%@cards.each do |card|%>
+<p><%=card.question%></p>
+<form action='' method=''>
+  <input type='radio' name='answer' value='true'> True <br>
+  <input type='radio' name='answer' value='false'> False <br>
+  <input type='submit' value='Next Question'>
+</form>
+
+<%end%>

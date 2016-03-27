@@ -11,9 +11,12 @@ end
 
 # end
 
+#  I am kind of iffy on these routes below. ----------------------------
 get '/decks/:id/cards' do
   @deck = Deck.find(params[:deck_id])
   @cards = Card.where(deck_id: @deck.id)
+  @cards.shuffle
+  erb 'deck/play'
 end
 
 get '/decks/:deck_id/cards/:card_id' do
