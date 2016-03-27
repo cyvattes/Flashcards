@@ -1,9 +1,8 @@
 class Deck < ActiveRecord::Base
   has_many :cards
   has_many :rounds
-  has_and_belongs_to_many :users
   attr_reader :cards, :answered_cards, :correct_answers, :total_guesses
-  # attr_accessor :temp_card
+
 
   def new_deck
   @answered_cards = [] #set as reader
