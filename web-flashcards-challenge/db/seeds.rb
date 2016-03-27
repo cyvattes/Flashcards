@@ -25,3 +25,12 @@ Deck.create(name: "Geography")
 Deck.create(name: "History")
 Deck.create(name: "Names in Songs")
 
+# Create fake users
+20.times do
+  User.create(user_name: Faker::Internet.user_name, password: "12345")
+end
+
+# Create fake rounds
+100.times do
+  Round.create(score: rand(0..20), total_guesses: rand(0..20), user_id: rand(1..20), deck_id: rand(1..4))
+end
