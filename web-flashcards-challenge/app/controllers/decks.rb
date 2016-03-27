@@ -16,13 +16,18 @@ get '/decks/:deck_id/cards' do
   @deck = Deck.find(params[:deck_id])
   @deck.new_deck if @deck.cards == nil
   @card = @deck.pick_a_card
+  p "---------------------------------------------"
+  p @deck.answered_cards
   if @card == 'game over'
-    erb :'/decks/results' 
+    erb :'/decks/results'
   end
   erb :'/decks/play'
 end
 
 post '/decks/:deck_id/cards' do
+  p params
+  p "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+  p @deck.answered_cards
   deck = Deck.find(params[:deck_id])
   deck.submit_answer(params[:answer])
   redirect '/decks/:deck_id/cards'

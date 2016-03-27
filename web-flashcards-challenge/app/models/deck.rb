@@ -3,20 +3,20 @@ class Deck < ActiveRecord::Base
   has_many :rounds
   has_and_belongs_to_many :users
   attr_reader :cards, :answered_cards, :correct_answers, :total_guesses
-  
+  # attr_accessor :temp_card
+
   def new_deck
-  @cards = [] #set as reader
   @answered_cards = [] #set as reader
   @correct_answers = 0
   @total_guesses = 0
-  @cards.push(Card.where(deck_id: self.id))
+  @cards = Card.where(deck_id: self.id).to_a
   @cards.shuffle
   end
-  
+
   def pick_a_card
     if @cards.length == 0
       if @answered_cards.length == 0
-         return "game over"      
+         return "game over"
       end
       @cards = @answered_cards.where(answered_correctly: 0)
       @answered_cards = []
@@ -25,7 +25,7 @@ class Deck < ActiveRecord::Base
     @answered_cards << card
     return card
   end
-  
+
   def submit_answer(answer)
     card = @answered_cards.last
     if card.correct_answer == answer
@@ -35,7 +35,7 @@ class Deck < ActiveRecord::Base
     card.times_answered += 1
     @total_guesses += 1
   end
-  
+
   def reset
     finished_cards = Card.where(deck_id: self.id)
     finished_cards.each do |card|
