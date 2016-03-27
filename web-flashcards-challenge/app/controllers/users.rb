@@ -1,17 +1,13 @@
-
-
 get '/users' do
 
 end
 
 get '/users/new' do
-
   erb :'users/new'
 end
 
 post '/users' do
-  user = User.new(params[:user])
-  user.password = params[:password]
+  user = User.new(user_name: params[:user_name], password: params[:password])
   if user.save
     session[:id] = user.id
     redirect '/decks'
@@ -20,9 +16,27 @@ post '/users' do
   end
 end
 
-# get '/users/:id' do
+get '/users/login_form' do
+  erb :'/users/login'
+end
 
-# end
+post '/users/login' do
+  user = User.find_by(user_name: params[:username])
+  p "***************"
+  p params
+  p user
+  p "***************"
+  if user.user_name && user.password == params[:password]
+    redirect "/users/#{user.id}/rounds"
+  else
+    redirect "/users/login_form"
+  end
+end
+
+
+get '/users/:id/rounds' do
+  "it works"
+end
 
 get '/users/:id/rounds' do
   @card = Cards.where(session[:id] == user.id)
