@@ -32,7 +32,13 @@ end
 
 
 get '/users/:user_id/rounds' do
-
+  @user = User.find(params[:user_id])
+  if @user.id = session[:id]
+    @rounds = Round.where(user_id: @user.id)
+    erb :'users/user_stats'
+  else
+   "Access denied"
+ end
 end
 
 
