@@ -31,13 +31,10 @@ post '/users/login' do
 end
 
 
-get '/users/:id/rounds' do
-  "this is the session #{session[:id]}"
+get '/users/:user_id/rounds' do
+
 end
 
-get '/users/:id/rounds' do
-  @card = Cards.where(session[:id] == user.id)
-end
 
 get '/users/:id/rounds/:round_id' do
 
