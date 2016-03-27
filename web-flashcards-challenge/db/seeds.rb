@@ -32,5 +32,5 @@ end
 
 # Create fake rounds
 100.times do
-  Round.create(score: rand(0..20), total_guesses: rand(0..20), user_id: rand(1..20), deck_id: rand(1..4))
+  Round.create(score: rand(0..20),  user_id: rand(1..20), deck_id: rand(1..4))
 end
