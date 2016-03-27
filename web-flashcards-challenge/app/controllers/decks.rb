@@ -14,17 +14,18 @@ end
 #  I am kind of iffy on these routes below. ----------------------------
 get '/decks/:deck_id/cards' do
   @deck = Deck.find(params[:deck_id])
-  @cards = Card.where(deck_id: @deck.id)
-  @cards.shuffle
-  erb 'deck/play'
+  @deck.new_deck if @deck.cards == nil
+  @card = @deck.pick_a_card
+  if @card == 'game over'
+    erb :'/decks/results' 
+  end
+  erb :'/decks/play'
 end
 
-# get '/decks/:deck_id/cards/:card_id' do
-
-# end
-
 post '/decks/:deck_id/cards' do
-
+  deck = Deck.find(params[:deck_id])
+  deck.submit_answer(params[:answer])
+  redirect '/decks/:deck_id/cards'
 end
 
 # get '/decks/:id/edit' do
