@@ -38,7 +38,7 @@ get '/users/:user_id/rounds' do
     erb :'users/user_stats'
   else
    "Access denied"
- end
+  end
 end
 
 

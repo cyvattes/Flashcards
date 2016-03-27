@@ -11,15 +11,16 @@ end
 
 # end
 
-get '/decks/:id' do
+get '/decks/:id/cards' do
+  @deck = Deck.find(params[:deck_id])
+  @cards = Card.where(deck_id: @deck.id)
+end
+
+get '/decks/:deck_id/cards/:card_id' do
 
 end
 
-get '/decks/:id/cards/:card_id' do
-
-end
-
-post '/decks/:id/cards/:card_id' do
+post '/decks/:deck_id/cards/:card_id' do
 
 end
 
