@@ -1,0 +1,17 @@
+
+#header_left {
+  float:left;
+  margin: 10px 0px 20px 100px;
+  border: 1px solid black;
+
+}
+
+#header_right {
+  float:right;
+   margin: 10px 200px 20px 0px;
+   width:40%;
+   border: 1px solid black;
+}
+
+
+
