@@ -1,8 +1,8 @@
 <h2><%=@deck.name%></h2>
 
 <p><%=@card.question%></p>
-<form action='/decks/:deck_id/cards' method='post'>
-  <input type='radio' name='answer' value='true'> True <br>
-  <input type='radio' name='answer' value='false'> False <br>
+<form action='/decks/<%=@deck.id%>/cards' method='post'>
+  <input type='radio' name='answer' value='True'> True <br>
+  <input type='radio' name='answer' value='False'> False <br>
   <input type='submit' value='Next Question'>
 </form>
