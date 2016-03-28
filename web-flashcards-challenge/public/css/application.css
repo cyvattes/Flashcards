@@ -1,17 +1,40 @@
 
 #header_left {
   float:left;
-  margin: 10px 0px 20px 100px;
-  border: 1px solid black;
+  margin: 10px 0px 50px 100px;
 
 }
 
 #header_right {
   float:right;
-   margin: 10px 200px 20px 0px;
+   margin: 40px 200px 20px 0px;
    width:40%;
-   border: 1px solid black;
 }
 
 
+.header_right_links{
+	width: 50%;
+	display: inline;
+	align: right;
+}
 
+
+.header_right_links:nth-child(1){
+	padding-right: 10px;
+	margin-left: 300px;
+}
+
+.header_right_links:nth-child(2){
+
+}
+
+.verticalLine {
+	padding-left: 10px;
+	padding-right: 10px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.header_right_links:nth-child(3){
+	padding-left: 10px;
+}
