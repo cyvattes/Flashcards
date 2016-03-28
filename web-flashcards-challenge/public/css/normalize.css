@@ -12,12 +12,14 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
+
 /**
  * Remove default margin.
  */
 
 body {
   margin: 0;
+  background-color: #edf0f5;
 }
 
 /* HTML5 display definitions
@@ -27,7 +29,7 @@ body {
  * Correct `block` display not defined in IE 8/9.
  */
 
-article,
+/*article,
 aside,
 details,
 figcaption,
@@ -41,7 +43,7 @@ section,
 summary {
   display: block;
 }
-
+*/
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.

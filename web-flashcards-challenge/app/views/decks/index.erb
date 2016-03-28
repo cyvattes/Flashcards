@@ -1,11 +1,13 @@
-<h1>Flashcards</h1>
-<h2>Flashcard Decks</h2>
-<ul>
-  <% @decks.each do |deck| %>
-    <li><form action='/decks/<%=deck.id%>' method='post'>
-      <input type='hidden' value='<%= deck.id %>' name='deck_id'>
-      <input type='submit' value='<%= deck.name %>'>
-    </form></li>
-<!--     <li><a href="/decks/<%= deck.id %>/cards"><%= deck.name %></a></li> -->
-  <% end %>
-</ul>
+
+<div id="body_container">
+	<h2>Flashcard Decks</h2>
+	<ul>
+	  <% @decks.each do |deck| %>
+	    <li><form action='/decks/<%=deck.id%>' method='post'>
+	      <input type='hidden' value='<%= deck.id %>' name='deck_id'>
+	      <input type='submit' value='<%= deck.name %>'>
+	    </form></li>
+	<!--     <li><a href="/decks/<%= deck.id %>/cards"><%= deck.name %></a></li> -->
+	  <% end %>
+	</ul>
+</div>
