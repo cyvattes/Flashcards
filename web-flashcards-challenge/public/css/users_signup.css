@@ -1,0 +1,19 @@
+#signup_body {
+	clear: both;
+	margin: 100px 0px 0px 200px;
+}
+
+#signup_body input {
+	width: 400px;
+	display: block;
+	margin-top: 15px;
+	border-radius: 5%;
+}
+
+#signup_body input[type="submit"] {
+	width:100px;
+	border-radius: 5%;
+	background-color: #3a5795;
+	color: #96accb;
+	box-shadow: 2px 2px gray;
+}
