@@ -4,6 +4,9 @@
   margin: 10px 0px 50px 100px;
 
 }
+#header_left h1 {
+	text-shadow: 1px 1px gray;
+}
 
 #header_right {
   float:right;
@@ -17,7 +20,6 @@
 	display: inline;
 	align: right;
 }
-
 
 .header_right_links:nth-child(1){
 	padding-right: 10px;
@@ -37,4 +39,10 @@
 
 .header_right_links:nth-child(3){
 	padding-left: 10px;
+}
+
+.header_right_links a{
+	text-decoration: none;
+	color: black;
+	text-transform: uppercase;
 }

@@ -1,0 +1,21 @@
+#body_container {
+  margin: 50px 0px 40px 300px;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  clear: both;
+}
+
+#body_container li {
+	list-style: none;
+	display: inline;
+}
+
+#body_container h2 {
+	text-decoration: underline;
+}
+
+#body_container input {
+	border-radius: 5%;
+	background-color: #3a5795;
+	color: #96accb;
+}

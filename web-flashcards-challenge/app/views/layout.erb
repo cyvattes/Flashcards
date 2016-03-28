@@ -11,7 +11,7 @@
       application.css is where you put your styles
     -->
     <link rel="stylesheet" href="/css/application.css">
-
+    <link rel="stylesheet" href="/css/decks_index.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="/js/application.js"></script>
 
@@ -22,20 +22,20 @@
       <section id="header_left">
         <h1>Flashcards</h1>
       </section>
-       <section id="header_right">
-         <div class="header_right_links">
-            <a href="/users/new">Register</a>
-         </div>
-         <div class="header_right_links">
-            <a href="/users/login_form" class="verticalLine">Login</a>
-         </div>
-         <div class="header_right_links">
-            <a href="/decks">Home</a>
-         </div>
-      </section>
+      <section id="header_right">
+       <div class="header_right_links">
+          <a href="/users/new">Register</a>
+       </div>
+       <div class="header_right_links">
+          <a href="/users/login_form" class="verticalLine">Login</a>
+       </div>
+       <div class="header_right_links">
+          <a href="/decks">Home</a>
+       </div>
+     </section>
     </header>
-
+    
     <%= yield %>
-
+    
   </body>
 </html>
