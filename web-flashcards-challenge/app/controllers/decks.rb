@@ -53,7 +53,7 @@ end
 get '/decks/results' do
   @rounds = Round.all.to_a
   @round = @rounds.last
-  @guesses = [1,2,3,4,5,6,7,8,9,10]
+  @guesses = Guess.where(round_id: @round.id)
   @deck = Deck.find(@round.deck_id)
   erb :'/decks/results'
 end
