@@ -31,6 +31,10 @@ get '/decks/:deck_id/rounds/:round_id' do
   p cards_guessed
   p cards
   cards.delete_if {|card| cards_guessed.include?(card.id)}
+  p cards.length
+  if cards.length == 0
+    redirect :'/decks/results'
+  end
   @current_card = cards.pop
   erb :'/decks/play'
 end
@@ -46,6 +50,13 @@ post '/decks/:deck_id/rounds/:round_id/cards/:card_id' do
   redirect "/decks/#{params[:deck_id]}/rounds/#{params[:round_id]}"
 end
 
+get '/decks/results' do
+  @rounds = Round.all.to_a
+  @round = @rounds.last
+  @guesses = [1,2,3,4,5,6,7,8,9,10]
+  @deck = Deck.find(@round.deck_id)
+  erb :'/decks/results'
+end
 # get '/decks/:id/edit' do
 
 # end

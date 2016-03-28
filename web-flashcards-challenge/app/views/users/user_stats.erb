@@ -2,5 +2,5 @@
 
 <%@rounds.each do |round|%>
 <%deck = Deck.find(round.deck_id)%>
-<p> When you played <%=deck.name%> you got <%=round.score%> wrong on the first play through, and you guessed a total of <%=round.total_guesses%> times. <p> <br>
+<p> When you played <%=deck.name%> you got <%=round.score%> wrong on the first play through, and you guessed a total of 10 times. <p> <br>
   <%end%>
