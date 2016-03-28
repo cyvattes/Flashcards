@@ -1,0 +1,14 @@
+#decks_body {
+	clear: both;
+	margin: 100px 0px 0px 200px;
+}
+
+
+#decks_body input[type="submit"] {
+	width:200px;
+	border-radius: 5%;
+	background-color: #3a5795;
+	color: #96accb;
+	box-shadow: 2px 2px gray;
+	margin-top: 20px;
+}
